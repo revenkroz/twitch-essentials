@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Twitch Essentials</title>
+	<link rel="stylesheet" href="reset.css">
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="block">
+    <div class="block__content">
+      <div id="commands" class="commands">
+        <div id="add-command" class="commands__item btn p-d">+</div>
+      </div>
+    </div>
+  </div>
+
+  <div id="add-command-form" class="block bg-s hidden">
+    <div class="block__content">
+      <form class="form">
+        <input name="name" class="input p-d" type="text" placeholder="Название" autocomplete="off">
+        <textarea name="content" class="input p-d" rows="4" maxlength="500" placeholder="Сообщение для отправки" autocomplete="off"></textarea>
+        <input class="btn p-d" type="submit" value="Сохранить">
+      </form>
+    </div>
+  </div>
+
+	<script src="../browser-polyfill.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

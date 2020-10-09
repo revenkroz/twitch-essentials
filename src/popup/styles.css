@@ -1,0 +1,104 @@
+:root {
+  --color-bg-primary: #0e0e10;
+  --color-bg-secondary: #18181b;
+  --color-accent: #772ce8;
+  --color-accent-alt: #5c16c5;
+  --color-text-input: #efeff1;
+  --color-bg-input: #464649;
+  --border-radius-default: 4px;
+}
+
+html {
+  width: 400px;
+  font-family: Roboto, sans-serif;
+}
+
+body {
+  background-color: var(--color-bg-primary);
+}
+
+/* mods */
+
+.hidden {
+  display: none !important;
+}
+
+.p-d {
+  padding: 8px 12px;
+}
+
+.bg-d {
+  background-color: var(--color-bg-primary);
+}
+
+.bg-s {
+  background-color: var(--color-bg-secondary);
+}
+
+/* components */
+
+.block {
+  position: relative;
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  border-radius: var(--border-radius-default);
+}
+
+.block__content {
+  padding: 8px;
+}
+
+.form {
+  width: 100%;
+  padding: 8px;
+}
+
+.form .input {
+  width: 100%;
+  margin: 8px 0;
+}
+
+.input {
+  font-family: inherit;
+  line-height: 24px;
+  color: var(--color-text-input);
+  background-color: var(--color-bg-input);
+  border: 2px solid var(--color-text-input);
+  border-radius: var(--border-radius-default);
+  outline: none;
+  transition: all .2s ease;
+}
+
+.input:focus {
+  outline: none;
+  border: 2px solid var(--color-accent);
+  background-color: var(--color-bg-secondary);
+}
+
+.input:first-child {
+  margin-top: 0;
+}
+
+.btn {
+  cursor: pointer;
+  display: inline-block;
+  background-color: var(--color-accent);
+  color: #fff;
+  border: none;
+  border-radius: var(--border-radius-default);
+  transition: all .2s ease;
+}
+
+.btn:hover {
+  background-color: var(--color-accent-alt);
+}
+
+.commands {
+  display: contents;
+}
+
+.commands__item {
+  display: inline-block;
+  margin: 8px;
+}

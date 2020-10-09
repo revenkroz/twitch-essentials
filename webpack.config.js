@@ -7,8 +7,8 @@ module.exports = {
 	devtool: 'source-map',
 	stats: 'errors-only',
 	entry: {
-		background: './source/background',
-		options: './source/options'
+		background: './src/background',
+		'popup/popup': './src/popup/popup',
 	},
 	output: {
 		path: path.join(__dirname, 'distribution'),
@@ -17,13 +17,17 @@ module.exports = {
 	plugins: [
 		new SizePlugin(),
 		new CopyWebpackPlugin([
+      {
+        from: 'content/*',
+        context: 'src',
+      },
 			{
 				from: '**/*',
-				context: 'source',
+				context: 'src',
 				ignore: ['*.js']
 			},
 			{
-				from: 'node_modules/webextension-polyfill/dist/browser-polyfill.min.js'
+				from: 'node_modules/webextension-polyfill/dist/browser-polyfill.js'
 			}
 		])
 	],
@@ -32,10 +36,9 @@ module.exports = {
 			new TerserPlugin({
 				terserOptions: {
 					mangle: false,
-					compress: false,
+					compress: true,
 					output: {
-						beautify: true,
-						indent_level: 2 // eslint-disable-line camelcase
+						beautify: false,
 					}
 				}
 			})

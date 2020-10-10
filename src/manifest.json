@@ -7,8 +7,8 @@
   "minimum_chrome_version": "80",
   "applications": {
     "gecko": {
-      "id": "awesome-extension@notlmn.github.io",
-      "strict_min_version": "67.0"
+      "id": "revenkroz@twitch-essentials",
+      "strict_min_version": "78.0"
     }
   },
   "icons": {

@@ -17,22 +17,39 @@ jobs:
       - uses: actions/checkout@v2
         with:
           fetch-depth: 20
-      - run: npm install
-      - run: npm test # This includes the build
-      - uses: fregante/daily-version-action@v1
+      - run: npm ci
+      - run: npm test
+      - id: daily-version
+        uses: fregante/daily-version-action@v1
         name: Create tag if necessary
-        id: daily-version
-      - uses: notlmn/release-with-changelog@v3
+      - id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          template: '{commits}'
-          exclude: '^Meta|^Document|^Readme|^Lint'
-      - name: Update extension’s meta
+          tag_name: ${{ steps.daily-version.outputs.version }}
+          release_name: Release ${{ steps.daily-version.outputs.version }}
+          draft: false
+          prerelease: false
+      - name: Update extension's meta
         env:
           VER: ${{ steps.daily-version.outputs.version }}
         run: |
           echo https://github.com/$GITHUB_REPOSITORY/tree/$VER > distribution/SOURCE_URL.txt
           npm run version
+      - name: Build project
+        run: |
+          (cd distribution && zip -r ../twitch-essentials-${{ steps.daily-version.outputs.version }}.zip *)
+      - name: Upload Release Asset
+        id: upload_release_asset
+        uses: actions/upload-release-asset@v1
+        env:
+         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+         upload_url: ${{ steps.create_release.outputs.upload_url }}
+         asset_path: ./twitch-essentials-${{ steps.daily-version.outputs.version }}.zip
+         asset_name: twitch-essentials-${{ steps.daily-version.outputs.version }}.zip
+         asset_content_type: application/zip
       - uses: actions/upload-artifact@v2
         with:
           path: distribution

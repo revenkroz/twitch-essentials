@@ -8,12 +8,10 @@
   --border-radius-default: 4px;
 }
 
-html {
-  width: 400px;
-  font-family: Roboto, sans-serif;
-}
-
 body {
+  font-family: Roboto, sans-serif;
+  font-size: 13px;
+  width: 400px;
   background-color: var(--color-bg-primary);
 }
 
@@ -59,8 +57,13 @@ body {
   margin: 8px 0;
 }
 
+.form .btn {
+  margin: 8px 0;
+}
+
 .input {
   font-family: inherit;
+  font-size: inherit;
   line-height: 24px;
   color: var(--color-text-input);
   background-color: var(--color-bg-input);
@@ -85,6 +88,8 @@ body {
   display: inline-block;
   background-color: var(--color-accent);
   color: #fff;
+  font-size: inherit;
+  font-family: inherit;
   border: none;
   border-radius: var(--border-radius-default);
   transition: all .2s ease;

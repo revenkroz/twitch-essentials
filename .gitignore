@@ -1,3 +1,4 @@
 node_modules
 distribution
 .idea/
+.DS_Store

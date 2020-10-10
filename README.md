@@ -4,15 +4,15 @@ This extension allows you to add custom buttons/shortcuts to send pasta to a cha
 
 ![how-to-use](docs/how-to-use.gif)
 
-### Features
+## Features
 
 - [x] Creating shortcuts to send something to a chat
 - [ ] Creating channels list
 - [ ] Autoclicking points button
 
-### Installation
+## Installation
 
-#### Google Chrome
+### Google Chrome
 
 * Download [latest release](https://github.com/Revenkroz/twitch-essentials/releases) and unpack it.
 * Open `chrome://extensions/`
@@ -20,7 +20,7 @@ This extension allows you to add custom buttons/shortcuts to send pasta to a cha
 * Click **Load Unpacked** in the top left corner.
 * Select the unpacked directory.
 
-#### Mozilla Firefox
+### Mozilla Firefox
 
 * Download [latest release](https://github.com/Revenkroz/twitch-essentials/releases) and unpack it.
 * Open `about:addons`
@@ -28,8 +28,8 @@ This extension allows you to add custom buttons/shortcuts to send pasta to a cha
 * Select the unpacked directory.
 
 
-### F.A.Q.
+## F.A.Q.
 
-#### How to delete a button
+### How to delete a button
 
 Just right-click on it.

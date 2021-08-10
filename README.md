@@ -6,9 +6,7 @@ This extension allows you to add custom buttons/shortcuts to send pasta to a cha
 
 ## Features
 
-- [x] Creating shortcuts to send something to a chat
-- [ ] Creating channels list
-- [ ] Autoclicking points button
+- Creating shortcuts to send something to a chat
 
 ## Installation
 
